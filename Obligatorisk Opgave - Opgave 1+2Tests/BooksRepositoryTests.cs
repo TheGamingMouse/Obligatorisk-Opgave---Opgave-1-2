@@ -36,8 +36,14 @@ namespace Obligatorisk_Opgave___Opgave_1_2.Tests
             IEnumerable<Book> titleSortedBooks = _repo.Get(orderBy: "title");
             Assert.AreEqual("Game of Thrones", titleSortedBooks.First().Title);
 
+            IEnumerable<Book> titleSortedBooksDesc = _repo.Get(orderBy: "title_desc");
+            Assert.AreEqual("To Kill a Mockingbird", titleSortedBooksDesc.First().Title);
+
             IEnumerable<Book> priceSortedBooks = _repo.Get(orderBy: "price");
             Assert.AreEqual("The Great Gatsby", priceSortedBooks.First().Title);
+
+            IEnumerable<Book> priceSortedBooksDesc = _repo.Get(orderBy: "price_desc");
+            Assert.AreEqual("Hunger Games", priceSortedBooksDesc.First().Title);
         }
 
         [TestMethod()]
